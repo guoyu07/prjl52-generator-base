@@ -1,0 +1,28 @@
+<?php
+
+namespace $NAMESPACE_REPOSITORY$;
+
+use $NAMESPACE_MODEL$\$MODEL_NAME$;
+use InfyOm\Generator\Common\BaseRepository;
+
+class $MODEL_NAME$Repository extends BaseRepository
+{
+    /**
+     * Configure the Model
+     **/
+    public function model()
+    {
+        return $MODEL_NAME$::class;
+    }
+
+    public function search($search = null)
+    {
+        $news = $MODEL_NAME$::orderBy('created_at');
+
+        if ($search) {
+            $$MODEL_NAME_PLURAL_CAMEL$ = $$MODEL_NAME_PLURAL_CAMEL$->where('name', 'LIKE', '%' . $search . '%');
+        }
+
+        return $$MODEL_NAME_PLURAL_CAMEL$->paginate();
+    }
+}

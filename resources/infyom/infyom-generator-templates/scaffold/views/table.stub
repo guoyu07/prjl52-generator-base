@@ -1,0 +1,25 @@
+<table class="table table-responsive">
+    <thead>
+        $FIELD_HEADERS$
+        <th>編號</th>
+        <th>名稱</th>
+        <th>建立時間</th>
+        <th>操作</th>
+    </thead>
+    <tbody>
+    @foreach($$MODEL_NAME_PLURAL_CAMEL$ as $key => $$MODEL_NAME_CAMEL$)
+        <tr>
+            $FIELD_BODY$
+            <td>{{$$MODEL_NAME_CAMEL$->id}}</td>
+            <td>name</td>
+            <td>{{$$MODEL_NAME_CAMEL$->created_at}}</td>
+            <td>
+                {!! Form::open(['route' => ['$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.destroy', $$MODEL_NAME_CAMEL$->id], 'method' => 'delete']) !!}
+                <a class="btn btn-primary btn-sm" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.edit', [$$MODEL_NAME_CAMEL$->id]) !!}"><i class="glyphicon glyphicon-edit"></i> 編輯</a>
+                {!! Form::button('<i class="glyphicon glyphicon-trash"></i> 刪除', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm delete']) !!}
+                {!! Form::close() !!}
+            </td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>

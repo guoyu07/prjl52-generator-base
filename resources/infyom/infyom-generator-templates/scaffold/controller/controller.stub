@@ -1,0 +1,154 @@
+<?php
+
+namespace $NAMESPACE_CONTROLLER$;
+
+use $NAMESPACE_REQUEST$\Create$MODEL_NAME$Request;
+use $NAMESPACE_REQUEST$\Update$MODEL_NAME$Request;
+use $NAMESPACE_REPOSITORY$\$MODEL_NAME$Repository;
+use $NAMESPACE_CONTROLLER$\AppBaseController as InfyOmBaseController;
+
+class $MODEL_NAME$Controller extends InfyOmBaseController
+{
+    /** @var  $MODEL_NAME$Repository */
+    private $$MODEL_NAME_CAMEL$Repo;
+
+    public function __construct($MODEL_NAME$Repository $$MODEL_NAME_CAMEL$Repo)
+    {
+        $this->$MODEL_NAME_CAMEL$Repo = $$MODEL_NAME_CAMEL$Repo;
+    }
+
+    /**
+     * Display a listing of the $MODEL_NAME$.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function index(\Request $request)
+    {
+        if (request('search')) {
+            $$MODEL_NAME_PLURAL_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->search(request('search'));
+        } else {
+            $$MODEL_NAME_PLURAL_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->paginate();
+        }
+
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index')
+            ->with('$MODEL_NAME_PLURAL_CAMEL$', $$MODEL_NAME_PLURAL_CAMEL$);
+    }
+
+    /**
+     * Show the form for creating a new $MODEL_NAME$.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create');
+    }
+
+    /**
+     * Store a newly created $MODEL_NAME$ in storage.
+     *
+     * @param Create$MODEL_NAME$Request $request
+     *
+     * @return Response
+     */
+    public function store(Create$MODEL_NAME$Request $request)
+    {
+        $input = $request->all();
+
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->create($input);
+
+        \Flash::success('已成功新增一筆資料');
+
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.index'));
+    }
+
+    /**
+     * Display the specified $MODEL_NAME$.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function show($id)
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->findWithoutFail($id);
+
+        if (empty($$MODEL_NAME_CAMEL$)) {
+            \Flash::error('找不到該筆資料');
+
+            return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.index'));
+        }
+
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show')->with('$MODEL_NAME_CAMEL$', $$MODEL_NAME_CAMEL$);
+    }
+
+    /**
+     * Show the form for editing the specified $MODEL_NAME$.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->findWithoutFail($id);
+
+        if (empty($$MODEL_NAME_CAMEL$)) {
+            \Flash::error('找不到該筆資料');
+
+            return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.index'));
+        }
+
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit')->with('$MODEL_NAME_CAMEL$', $$MODEL_NAME_CAMEL$);
+    }
+
+    /**
+     * Update the specified $MODEL_NAME$ in storage.
+     *
+     * @param  int $id
+     * @param Update$MODEL_NAME$Request $request
+     *
+     * @return Response
+     */
+    public function update($id, Update$MODEL_NAME$Request $request)
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->findWithoutFail($id);
+
+        if (empty($$MODEL_NAME_CAMEL$)) {
+            \Flash::error('找不到該筆資料');
+
+            return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.index'));
+        }
+
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->update($request->all(), $id);
+
+        \Flash::success('已成功更新一筆資料');
+
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.edit', $$MODEL_NAME_CAMEL$->id));
+    }
+
+    /**
+     * Remove the specified $MODEL_NAME$ from storage.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Repo->findWithoutFail($id);
+
+        if (empty($$MODEL_NAME_CAMEL$)) {
+            \Flash::error('找不到該筆資料');
+
+            return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.index'));
+        }
+
+        $this->$MODEL_NAME_CAMEL$Repo->delete($id);
+
+        \Flash::success('已成功刪除一筆資料');
+
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.index'));
+    }
+}
