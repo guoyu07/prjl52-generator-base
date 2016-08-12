@@ -11,6 +11,10 @@ use Eloquent as Model;
 class Department extends Model
 {
 
+    use \Rutorika\Sortable\SortableTrait;
+
+    protected static $sortableField = 'order';
+
     public $table = 'departments';
 
     public $fillable = [

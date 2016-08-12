@@ -23,6 +23,6 @@ class DepartmentRepository extends BaseRepository
             $department = $department->where('name', 'LIKE', '%' . $search . '%');
         }
 
-        return $department->paginate();
+        return $department->paginate()->orderBy('order');
     }
 }

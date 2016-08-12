@@ -162,6 +162,7 @@ return [
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         \InfyOm\GeneratorBuilder\GeneratorBuilderServiceProvider::class,
+        Rutorika\Sortable\SortableServiceProvider::class,
         /*
          * Application Service Providers...
          */

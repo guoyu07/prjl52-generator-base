@@ -28,7 +28,7 @@ class DepartmentController extends InfyOmBaseController
         if (request('search')) {
             $departments = $this->departmentRepo->search(request('search'));
         } else {
-            $departments = $this->departmentRepo->paginate();
+            $departments = $this->departmentRepo->orderBy('order')->paginate();
         }
 
         return view('backend.departments.index')

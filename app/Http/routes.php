@@ -56,6 +56,8 @@ Route::group(['prefix' => 'backend', 'namespace' => 'Backend'], function () {
     Route::group(['middleware' => 'auth.backend'], function () {
     	// Default
     	Route::get('/', ['as' => 'backend.news.index', 'uses' => 'NewsController@index']);
+        // Sort
+        Route::post('/sort', ['as' => 'backend.sort', 'uses' => '\Rutorika\Sortable\SortableController@sort']);
 
 		// News Routes
     	Route::group(['prefix' => 'news'], function () {

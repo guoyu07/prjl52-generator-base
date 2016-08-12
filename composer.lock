@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a826defbae76c1ecb57a234dafa811b8",
-    "content-hash": "f3350fb6c601252f6d73f2a999c75bc2",
+    "hash": "4501e10db1a79b0197872fbc7885c7fc",
+    "content-hash": "addc266e3a0f82df09dcfb7b7b16b3e3",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -2605,6 +2605,59 @@
             "time": "2016-03-09 05:03:14"
         },
         {
+            "name": "rutorika/sortable",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/boxfrommars/rutorika-sortable.git",
+                "reference": "8a05447606657d48899f21f14ed3426bd8517afd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boxfrommars/rutorika-sortable/zipball/8a05447606657d48899f21f14ed3426bd8517afd",
+                "reference": "8a05447606657d48899f21f14ed3426bd8517afd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "3.*",
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Rutorika\\Sortable": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Groza",
+                    "email": "boxfrommars@gmail.com"
+                }
+            ],
+            "description": "Adds sortable behavior and ordering to Laravel Eloquent models. Grouping and many to many supported.",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "laravel4",
+                "laravel5",
+                "order",
+                "orderable",
+                "ordering",
+                "sort",
+                "sortable",
+                "sorting"
+            ],
+            "time": "2016-05-09 14:18:19"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.3",
             "source": {
@@ -3602,7 +3655,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/bc4844bdb39bb72414bd0cbd9a33b3e7d52852ee",
+                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/ba8163e8b20f3a0faae0a7184c977fbcfd2d3bb6",
                 "reference": "bc4844bdb39bb72414bd0cbd9a33b3e7d52852ee",
                 "shasum": ""
             },

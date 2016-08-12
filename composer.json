@@ -20,7 +20,8 @@
         "laracasts/utilities": "~2.0",
         "filp/whoops": "^2.1",
         "infyomlabs/generator-builder": "dev-master",
-        "unisharp/laravel-filemanager": "dev-master"
+        "unisharp/laravel-filemanager": "dev-master",
+        "rutorika/sortable": "^3.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,14 +1,16 @@
 <table class="table table-responsive">
     <thead>
+        <th>排序</th>
         <th>編號</th>
         <th>單位/處室名稱</th>
         <th>建立時間</th>
         <th>操作</th>
     </thead>
-    <tbody>
+    <tbody class="sortable" data-entityname="departments">
     @foreach($departments as $key => $department)
-        <tr>
-            <td>{{$department->id}}</td>
+        <tr data-itemId="{{{ $department->id }}}">
+            <td class="sortable-handle"><span class="glyphicon glyphicon-sort"></span></td>
+            <td class="id-column">{{$department->id}}</td>
             <td>{{$department->name}}</td>
             <td>{{$department->created_at}}</td>
             <td>

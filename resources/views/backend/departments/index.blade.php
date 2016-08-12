@@ -39,3 +39,6 @@
     </div>
 @endsection
 
+@section('javascript')
+@include('backend.partial.sort')
+@endsection
