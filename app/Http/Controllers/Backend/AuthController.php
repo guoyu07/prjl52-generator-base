@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\User;
+use App\Models\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -38,7 +38,7 @@ class AuthController extends Controller
     public function postLogin()
     {
         $credential = [];
-        $credential['email'] = \Request::input('email');
+        $credential['username'] = \Request::input('username');
         $credential['password'] = \Request::input('password');
 
         if (\Auth::attempt($credential)) {
