@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreatenewsTable extends Migration
+class CreateNewsTable extends Migration
 {
 
     /**
@@ -20,7 +20,7 @@ class CreatenewsTable extends Migration
             $table->integer('department_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('department_id')->references('id')->on('department')->onDelete('cascade');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
         });
     }
 
