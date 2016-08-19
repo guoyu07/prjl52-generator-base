@@ -27,4 +27,14 @@ class Create$MODEL_NAME$Request extends Request
     {
         return $MODEL_NAME$::$rules;
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return $MODEL_NAME$::$messages;
+    }
 }
