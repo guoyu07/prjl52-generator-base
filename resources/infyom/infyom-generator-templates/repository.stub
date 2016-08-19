@@ -17,7 +17,7 @@ class $MODEL_NAME$Repository extends BaseRepository
 
     public function search($search = null)
     {
-        $news = $MODEL_NAME$::orderBy('created_at');
+        $$MODEL_NAME_PLURAL_CAMEL$ = $MODEL_NAME$::orderBy('created_at');
 
         if ($search) {
             $$MODEL_NAME_PLURAL_CAMEL$ = $$MODEL_NAME_PLURAL_CAMEL$->where('name', 'LIKE', '%' . $search . '%');
