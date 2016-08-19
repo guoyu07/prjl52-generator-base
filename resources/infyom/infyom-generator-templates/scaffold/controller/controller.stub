@@ -6,9 +6,9 @@ use $NAMESPACE_REQUEST$\Create$MODEL_NAME$Request;
 use $NAMESPACE_REQUEST$\Update$MODEL_NAME$Request;
 use $NAMESPACE_REQUEST$\Destroy$MODEL_NAME$Request;
 use $NAMESPACE_REPOSITORY$\$MODEL_NAME$Repository;
-use $NAMESPACE_CONTROLLER$\AppBaseController as InfyOmBaseController;
+use $NAMESPACE_CONTROLLER$\AppBaseController as BaseController;
 
-class $MODEL_NAME$Controller extends InfyOmBaseController
+class $MODEL_NAME$Controller extends BaseController
 {
     /** @var  $MODEL_NAME$Repository */
     private $$MODEL_NAME_CAMEL$Repo;
