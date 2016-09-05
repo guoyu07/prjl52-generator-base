@@ -4,7 +4,7 @@
     <section class="content-header">
         <h1 class="page-header">$MODEL_NAME_PLURAL$</h1>
         <div class="pull-left">
-           <a class="btn btn-info pull-right" style="margin-bottom: 10px" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.create') !!}">新增$MODEL_NAME$</a>
+           <a class="btn btn-info" style="margin-bottom: 10px" href="{!! route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.create') !!}">新增$MODEL_NAME$</a>
         </div>
 
         <!-- Search Area -->

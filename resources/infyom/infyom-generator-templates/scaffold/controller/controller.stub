@@ -126,7 +126,7 @@ class $MODEL_NAME$Controller extends BaseController
 
         \Flash::success('已成功更新一筆資料');
 
-        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_CAMEL$.edit', $$MODEL_NAME_CAMEL$->id));
+        return redirect()->back();
     }
 
     /**
